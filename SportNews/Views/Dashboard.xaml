@@ -1,0 +1,115 @@
+﻿<Window x:Class="SportNews.Dashboard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SportNews"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Dashboard" Height="720" Width="1300" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None">
+
+    <Window.Resources>
+        <Storyboard x:Key="MenuOpen">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
+                <EasingDoubleKeyFrame KeyTime="0" Value="70"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0:0.5" Value="300"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="MenuClose">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
+                <EasingDoubleKeyFrame KeyTime="0" Value="300"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0:0.5" Value="70"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="ButtonOpenMenu">
+            <BeginStoryboard Storyboard="{StaticResource MenuOpen}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="ButtonCloseMenu">
+            <BeginStoryboard Storyboard="{StaticResource MenuClose}"/>
+        </EventTrigger>
+    </Window.Triggers>
+    
+    <Grid>
+        <Grid Height="80" VerticalAlignment="Top" Background="#FF1644A4">
+            <TextBlock Text="SportNews" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36"/>
+            <StackPanel VerticalAlignment="Center" Orientation="Horizontal" HorizontalAlignment="Left">
+                <materialDesign:PopupBox Margin="10" PlacementMode="BottomAndAlignLeftEdges" StaysOpen="False" Foreground="White" Height="45" Width="45">
+                    <StackPanel Width="150">
+                        <Button Content="O projekcie" />
+                        <Separator/>
+                        <Button x:Name="ButtonPopUpCloseAplication" Content="Zamknij" Click="ButtonPopUpCloseAplication_Click" />
+                    </StackPanel>
+                </materialDesign:PopupBox>
+                <StackPanel VerticalAlignment="Center" Orientation="Horizontal" HorizontalAlignment="Left">
+                    <materialDesign:PackIcon Kind="Home" Foreground="White" Width="25" Height="25"/>
+                </StackPanel>
+            
+            </StackPanel>
+        </Grid>
+        <Grid x:Name="GridMenu" Width="65" HorizontalAlignment="Right" Background="#FF01A1F7">
+            <StackPanel>
+                <Grid Height="80" Background="#1644A4">
+                    <Button x:Name="ButtonCloseMenu" Width="80" Height="80" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Right" Visibility="Collapsed" Click="ButtonCloseMenu_Click">
+                        <materialDesign:PackIcon Kind="Close" Height="45" Width="45"/>
+                    </Button>
+                    <Button x:Name="ButtonOpenMenu" Width="80" Height="80" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Right" Click="ButtonOpenMenu_Click">
+                        <materialDesign:PackIcon Kind="HamburgerMenu" Height="45" Width="45" />
+                    </Button>
+                </Grid>
+                <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" Foreground="Black">
+                    <ListViewItem Height="80">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Tv" Width="45" Height="45" VerticalAlignment="Center"/>
+                            <TextBlock Text="Wszystkie" VerticalAlignment="Center" Margin="20 10" Foreground="White" FontSize="26"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="80">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Soccer" Width="45" Height="45" VerticalAlignment="Center"/>
+                            <TextBlock Text="Piłka Nożna" VerticalAlignment="Center" Margin="20 10" Foreground="White" FontSize="26"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="80">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Volleyball" Width="45" Height="45" VerticalAlignment="Center"/>
+                            <TextBlock Text="Siatkówka" VerticalAlignment="Center" Margin="20 10" Foreground="White" FontSize="26"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="80">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Mma" Width="45" Height="45" VerticalAlignment="Center"/>
+                            <TextBlock Text="Sporty Walki" VerticalAlignment="Center" Margin="20 10" Foreground="White" FontSize="26"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="80">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Handball" Width="45" Height="45" VerticalAlignment="Center"/>
+                            <TextBlock Text="Piłka Ręczna" VerticalAlignment="Center" Margin="20 10" Foreground="White" FontSize="26"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="80">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="RacingHelmet" Width="45" Height="45" VerticalAlignment="Center"/>
+                            <TextBlock Text="Moto" VerticalAlignment="Center" Margin="20 10" Foreground="White" FontSize="26"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="80">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Tennis" Width="45" Height="45" VerticalAlignment="Center"/>
+                            <TextBlock Text="Tenis" VerticalAlignment="Center" Margin="20 10" Foreground="White" FontSize="26"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="80">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Basketball" Width="45" Height="45" VerticalAlignment="Center"/>
+                            <TextBlock Text="Koszykówka" VerticalAlignment="Center" Margin="20 10" Foreground="White" FontSize="26"/>
+                        </StackPanel>
+                    </ListViewItem>
+                </ListView>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
