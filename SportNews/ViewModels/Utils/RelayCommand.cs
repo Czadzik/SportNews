@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace SimpleGraphGenerator.ViewModels
+namespace SimpleGraphGenerator.ViewModels.Utils
 {
     public class RelayCommand : ICommand
     {

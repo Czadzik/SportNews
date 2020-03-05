@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SimpleGraphGenerator.ViewModels
+namespace SimpleGraphGenerator.ViewModels.Utils
 {
     class ViewModelBase : INotifyPropertyChanged
     {
