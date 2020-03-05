@@ -4,9 +4,33 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SportNews"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Dashboard" Height="720" Width="1300" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None">
     <Grid>
-        
+        <Grid Margin="0,0,926,0" Background="#FF1644A4">
+
+            <Button x:Name="ButtonCloseApp" Background="#FF1644A4" Click="ButtonCloseApp_Click" Margin="10,10,304,678" BorderThickness="0" BorderBrush="#FF1644A4" materialDesign:ShadowAssist.Darken="False" >
+                <materialDesign:PackIcon Kind="Power" Foreground="#fff" Width="25" Height="25" />
+            </Button>
+            <TextBlock Text="SportNews" HorizontalAlignment="Center" FontSize="36" Foreground="#FFF" Margin="75,47,125,626"/>
+
+            <Image Margin="53,510,125,90" Source="/SportNews;component/ViewModels/LogoPolsatSport.png" />
+
+        </Grid>
+
+        <Image Margin="187,-96,474,-168" Source="/SportNews;component/ViewModels/RunningCouple.png"  />
+        <Grid Margin="582,254,210,386" Background="#FF1644A4" Panel.ZIndex="-1">
+            <TextBlock Text="Uwielbiasz Sport? " FontSize="36" Foreground="#fff" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,10,28,22"/>
+        </Grid>
+        <Grid Margin="582,339,115,264" Background="#01A1F7" Panel.ZIndex="-1">
+            <TextBlock Text="Dzięki naszej aplikacji " FontSize="36" Foreground="#fff" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,7,10,0"/>
+            <TextBlock Text="możesz być na bierząco! " FontSize="30" Foreground="#fff" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,18"/>
+        </Grid>
+
+        <Button x:Name="ButtonGoToDashboard" Margin="651,499,210,141" Height="Auto" Content="WYPRÓBUJ TERAZ" Panel.ZIndex="-1" Foreground="#000" Background="#f3f3f3" FontSize="40" FontStyle="Italic" FontWeight="Thin" BorderThickness="0" SnapsToDevicePixels="True" Click="ButtonGoToDashboard_Click"/>
+
+
+
     </Grid>
 </Window>

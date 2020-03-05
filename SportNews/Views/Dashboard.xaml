@@ -36,15 +36,13 @@
         <Grid Height="80" VerticalAlignment="Top" Background="#FF1644A4">
             <TextBlock Text="SportNews" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36"/>
             <StackPanel VerticalAlignment="Center" Orientation="Horizontal" HorizontalAlignment="Left">
-                <materialDesign:PopupBox Margin="10" PlacementMode="BottomAndAlignLeftEdges" StaysOpen="False" Foreground="White" Height="45" Width="45">
-                    <StackPanel Width="150">
-                        <Button Content="O projekcie" />
-                        <Separator/>
-                        <Button x:Name="ButtonPopUpCloseAplication" Content="Zamknij" Click="ButtonPopUpCloseAplication_Click" />
-                    </StackPanel>
-                </materialDesign:PopupBox>
+                <Button x:Name="ButtonCloseApp" Background="#FF1644A4" Click="ButtonCloseApp_Click" BorderThickness="0" BorderBrush="#FF1644A4" materialDesign:ShadowAssist.Darken="False" >
+                    <materialDesign:PackIcon Kind="Power" Foreground="#fff" Width="25" Height="25" />
+                </Button>
                 <StackPanel VerticalAlignment="Center" Orientation="Horizontal" HorizontalAlignment="Left">
-                    <materialDesign:PackIcon Kind="Home" Foreground="White" Width="25" Height="25"/>
+                    <Button x:Name="ButtonGoToMainWindow" Background="#FF1644A4" Click="ButtonGoToMainWindow_Click" BorderThickness="0" BorderBrush="#FF1644A4" materialDesign:ShadowAssist.Darken="False" >
+                        <materialDesign:PackIcon Kind="Home" Foreground="White" Width="25" Height="25"/>
+                    </Button>
                 </StackPanel>
             
             </StackPanel>
@@ -59,7 +57,7 @@
                         <materialDesign:PackIcon Kind="HamburgerMenu" Height="45" Width="45" />
                     </Button>
                 </Grid>
-                <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" Foreground="Black">
+                <ListView  x:Name="ListViewMenu" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Foreground="Black" SelectionChanged="ListViewMenu_SelectionChanged">
                     <ListViewItem Height="80">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="Tv" Width="45" Height="45" VerticalAlignment="Center"/>
@@ -109,6 +107,9 @@
                         </StackPanel>
                     </ListViewItem>
                 </ListView>
+                <materialDesign:TransitioningContent x:Name="TransitioningContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromRight, Duration=0:0:0.2}">
+                    <Grid x:Name="GridCursor" Margin="0 -640"  Background="#fff" Width="5" HorizontalAlignment="Right" Height="80" VerticalAlignment="Top"/>
+                </materialDesign:TransitioningContent>
             </StackPanel>
         </Grid>
     </Grid>

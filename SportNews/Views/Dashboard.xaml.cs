@@ -24,11 +24,6 @@ namespace SportNews
             InitializeComponent();
         }
 
-        private void ButtonPopUpCloseAplication_Click(object sender, RoutedEventArgs e)
-        {
-            Application.Current.Shutdown();
-        }
-
         private void ButtonOpenMenu_Click(object sender, RoutedEventArgs e)
         {
             ButtonOpenMenu.Visibility = Visibility.Collapsed;
@@ -40,5 +35,59 @@ namespace SportNews
             ButtonOpenMenu.Visibility = Visibility.Visible;
             ButtonCloseMenu.Visibility = Visibility.Collapsed;
         }
+
+        private void ButtonCloseApp_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void ButtonGoToMainWindow_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
+        }
+
+        private void ListViewMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            int index = ListViewMenu.SelectedIndex;
+            MoveCursorMenu(index);
+
+            switch (index)
+            {
+                //case 0:
+                //    GridPrincipal.Children.Clear();
+                //    GridPrincipal.Children.Add(new UserControl1());
+                //    break;
+                //case 1:
+                //    GridPrincipal.Children.Clear();
+                //    GridPrincipal.Children.Add(new UserControlInfo());
+                //    break;
+                //case 2:
+                //    GridPrincipal.Children.Clear();
+                //    GridPrincipal.Children.Add(new UserControlParzenieYerby());
+                //    break;
+                //case 3:
+                //    GridPrincipal.Children.Clear();
+                //    GridPrincipal.Children.Add(new UserControlNom());
+                //    break;
+                //case 4:
+                //    GridPrincipal.Children.Clear();
+                //    GridPrincipal.Children.Add(new UserControlSklep());
+                //    break;
+
+
+                default:
+                    break;
+            }
+        }
+
+        private void MoveCursorMenu(int index)
+        {
+            TransitioningContentSlide.OnApplyTemplate();
+            GridCursor.Margin = new Thickness(0, (-640 + (80 * index)), 0, 0);
+
+        }
+
     }
 }

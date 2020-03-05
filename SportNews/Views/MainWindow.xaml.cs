@@ -24,5 +24,17 @@ namespace SportNews
         {
             InitializeComponent();
         }
+
+        private void ButtonCloseApp_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void ButtonGoToDashboard_Click(object sender, RoutedEventArgs e)
+        {
+            Dashboard dashWindow = new Dashboard();
+            dashWindow.Show();
+            this.Close();
+        }
     }
 }
