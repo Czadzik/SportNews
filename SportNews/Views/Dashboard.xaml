@@ -7,6 +7,9 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Title="Dashboard" Height="720" Width="1300" WindowStartupLocation="CenterScreen" ResizeMode="CanResize" WindowStyle="None">
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="0" ResizeBorderThickness="5" />
+    </WindowChrome.WindowChrome>
 
     <Window.Resources>
         <Storyboard x:Key="MenuOpen">
