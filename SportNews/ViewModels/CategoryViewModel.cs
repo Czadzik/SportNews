@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SportNews.Models;
 
 namespace SportNews.ViewModels
 {
@@ -65,9 +66,17 @@ namespace SportNews.ViewModels
         #region Private Methods
         private void LoadNewsItems()
         {
-            // TODO Wypelnij liste NewsItemow
-            // w petli
-            //NewsItems.Add(new NewsItem())
+            MongoCRUD db = new MongoCRUD("SportService_Database");
+            var AllChannels = db.LoadRecords<ChanelMongoDatabesPatern>("channels");
+            for (int i = 0; i < 7; i++)
+            {
+                for (int j = 0; j < 50; j++)
+                {
+                    NewsItems.Add(new NewsItem(AllChannels[i].item[j].title, AllChannels[i].item[j].description,j.ToString()));
+                }
+
+
+            }
 
         }
         #endregion
