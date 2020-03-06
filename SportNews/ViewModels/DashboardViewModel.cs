@@ -1,124 +1,126 @@
-﻿//using SimpleGraphGenerator.ViewModels.Utils;
-//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Text;
-//using System.Threading.Tasks;
+﻿using SimpleGraphGenerator.ViewModels.Utils;
+using SportNews.Views;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Controls;
 
-//namespace SportNews.ViewModels
-//{
-//    class DashboardViewModel : ViewModelBase
-//    {
-//        #region Constructor
-//        public DashboardViewModel()
-//        {
-//            Pages = new Dictionary<string, UserControl>
-//            {
-//                {"Wszystkie", new HomeStep1(this) },
-//                {"PilkaNozna", new HomeStep1(this) },
-//                {"Siatkowka", new HomeStep1(this) },
-//                {"SportWalki", new HomeStep1(this) },
-//                {"PilkaReczna", new HomeStep1(this) },
-//                {"Moto", new HomeStep1(this) },
-//                {"Tenis", new HomeStep1(this) },
-//                {"Koszykowka", new HomeStep2(this) },
-//            };
-//            WszystkieButtonClicked = new RelayCommand<object>(WszystkieButtonClickedHandler);
-//            PilkaNoznaButtonClicked = new RelayCommand<object>(PilkaNoznaButtonClickedHandler);
-//            SiatkowkaButtonClicked = new RelayCommand<object>(SiatkowkaButtonClickedHandler);
-//            SportWalkiButtonClicked = new RelayCommand<object>(SportWalkiButtonClickedHandler);
-//            PilkaRecznaButtonClicked = new RelayCommand<object>(PilkaRecznaButtonClickedHandler);
-//            MotoButtonClicked = new RelayCommand<object>(MotoButtonClickedHandler);
-//            TenisButtonClicked = new RelayCommand<object>(TenisButtonClickedHandler);
-//            KoszykowkaButtonClicked = new RelayCommand<object>(KoszykowkaButtonClickedHandler);
+namespace SportNews.ViewModels
+{
+    class DashboardViewModel : ViewModelBase
+    {
+        #region Constructor
+        public DashboardViewModel()
+        {
+            Pages = new Dictionary<string, UserControl>
+            {
+                {"wszystkie", new CategoryView("wszystkie") },
+                {"pilkaNozna", new CategoryView("pilkaNozna") },
+                {"siatkowka", new CategoryView("siatkowka") },
+                {"sportWalki", new CategoryView("sportWalki") },
+                {"pilkaReczna", new CategoryView("pilkaReczna") },
+                {"moto", new CategoryView("moto") },
+                {"tenis", new CategoryView("tenis") },
+                {"koszykowka", new CategoryView("koszykowka") },
+            };
+            WszystkieButtonClicked = new RelayCommand(WszystkieButtonClickedHandler);
+            PilkaNoznaButtonClicked = new RelayCommand(PilkaNoznaButtonClickedHandler);
+            SiatkowkaButtonClicked = new RelayCommand(SiatkowkaButtonClickedHandler);
+            SportWalkiButtonClicked = new RelayCommand(SportWalkiButtonClickedHandler);
+            PilkaRecznaButtonClicked = new RelayCommand(PilkaRecznaButtonClickedHandler);
+            MotoButtonClicked = new RelayCommand(MotoButtonClickedHandler);
+            TenisButtonClicked = new RelayCommand(TenisButtonClickedHandler);
+            KoszykowkaButtonClicked = new RelayCommand(KoszykowkaButtonClickedHandler);
 
-//            Loaded = new RelayCommand<object>(LoadedHandler);
-//        }
-//        #endregion
+            Loaded = new RelayCommand(LoadedHandler);
+        }
+        #endregion
 
-//        #region Properties
-//        //Commands
-//        public RelayCommand<object> WszystkieButtonClicked { get; set; }
-//        public RelayCommand<object> PilkaNoznaButtonClicked { get; set; }
-//        public RelayCommand<object> SiatkowkaButtonClicked { get; set; }
-//        public RelayCommand<object> SportWalkiButtonClicked { get; set; }
-//        public RelayCommand<object> PilkaRecznaButtonClicked { get; set; }
-//        public RelayCommand<object> MotoButtonClicked { get; set; }
-//        public RelayCommand<object> TenisButtonClicked { get; set; }
-//        public RelayCommand<object> KoszykowkaButtonClicked { get; set; }
+        #region Properties
+        //Commands
+        public RelayCommand WszystkieButtonClicked { get; private set; }
+        public RelayCommand PilkaNoznaButtonClicked { get; private set; }
+        public RelayCommand SiatkowkaButtonClicked { get; private set; }
+        public RelayCommand SportWalkiButtonClicked { get; private set; }
+        public RelayCommand PilkaRecznaButtonClicked { get; private set; }
+        public RelayCommand MotoButtonClicked { get; private set; }
+        public RelayCommand TenisButtonClicked { get; private set; }
+        public RelayCommand KoszykowkaButtonClicked { get; private set; }
+
+        public RelayCommand Loaded { get; private set; }
+
+        //Actual properties
+        public Dictionary<string, UserControl> Pages { get; }
+
+        private UserControl _currentPage;
+        public UserControl CurrentPage
+        {
+            get => _currentPage;
+            set
+            {
+                if (_currentPage == value)
+                    return;
+
+                _currentPage = value;
+                OnPropertyChanged();
+            }
+        }
+
+        #endregion
+
+        #region Command Handlers
+        private void WszystkieButtonClickedHandler(object obj)
+        {
+            CurrentPage = Pages["wszystkie"];
+            
+        }
+        private void PilkaNoznaButtonClickedHandler(object obj)
+        {
+            CurrentPage = Pages["pilkaNozna"];
+            
+        }
+        private void SiatkowkaButtonClickedHandler(object obj)
+        {
+            CurrentPage = Pages["siatkowka"];
+            
+        }
+        private void SportWalkiButtonClickedHandler(object obj)
+        {
+            CurrentPage = Pages["sportyWalki"];
+            
+        }
+        private void PilkaRecznaButtonClickedHandler(object obj)
+        {
+            CurrentPage = Pages["pilkaReczna"];
+            
+        }
+        private void MotoButtonClickedHandler(object obj)
+        {
+            CurrentPage = Pages["moto"];
+            
+        }
+        private void TenisButtonClickedHandler(object obj)
+        {
+            CurrentPage = Pages["tenis"];
+            
+        }
+
+        private void KoszykowkaButtonClickedHandler(object obj)
+        {
+            CurrentPage = Pages["koszykowka"];
+            
+        }
+
+        private void LoadedHandler(object obj)
+        {
+            
         
-//        public RelayCommand<object> Loaded { get; set; }
-
-//        //Actual properties
-//        public Dictionary<string, UserControl> Pages { get; }
-
-//        private UserControl _currentPage;
-//        public UserControl CurrentPage
-//        {
-//            get => _currentPage;
-//            set
-//            {
-//                if (_currentPage == value)
-//                    return;
-
-//                _currentPage = value;
-//                OnPropertyChanged();
-//            }
-//        }
-
-//        #endregion
-
-//        #region Command Handlers
-//        private void WszystkieButtonClickedHandler(object obj)
-//        {
-//            CurrentPage = Pages["HomeStep1"];
-//            IsHomeButtonActive = true;
-//        }
-//        private void PilkaNoznaButtonClickedHandler(object obj)
-//        {
-//            CurrentPage = Pages["HomeStep1"];
-//            IsHomeButtonActive = true;
-//        }
-//        private void SiatkowkaButtonClickedHandler(object obj)
-//        {
-//            CurrentPage = Pages["HomeStep1"];
-//            IsHomeButtonActive = true;
-//        }
-//        private void SportWalkiButtonClickedHandler(object obj)
-//        {
-//            CurrentPage = Pages["HomeStep1"];
-//            IsHomeButtonActive = true;
-//        }
-//        private void PilkaRecznaButtonClickedHandler(object obj)
-//        {
-//            CurrentPage = Pages["HomeStep1"];
-//            IsHomeButtonActive = true;
-//        }
-//        private void MotoButtonClickedHandler(object obj)
-//        {
-//            CurrentPage = Pages["HomeStep1"];
-//            IsHomeButtonActive = true;
-//        }
-//        private void TenisButtonClickedHandler(object obj)
-//        {
-//            CurrentPage = Pages["HomeStep1"];
-//            IsHomeButtonActive = true;
-//        }
-
-//        private void KoszykowkaButtonClickedHandler(object obj)
-//        {
-//            CurrentPage = Pages["HomeStep1"];
-//            IsHomeButtonActive = true;
-//        }
-
-//        private void LoadedHandler(object obj)
-//        {
-//            CurrentPage = Pages["HomeStep1"];
-//            IsHomeButtonActive = true;
-//        }
+        }
 
 
-//        #endregion
-//    }
+        #endregion
+    }
 
-//}
+}

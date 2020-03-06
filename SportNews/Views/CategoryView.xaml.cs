@@ -11,19 +11,21 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace SportNews.Views
 {
     /// <summary>
-    /// Interaction logic for Article.xaml
+    /// Interaction logic for CategoryView.xaml
     /// </summary>
-    public partial class Article : Window
+    public partial class CategoryView : UserControl
     {
-        public Article(string articleId)
+        public CategoryView(string categoryName)
         {
             InitializeComponent();
-            DataContext = new ArticleViewModel(articleId);
+
+            DataContext = new CategoryViewModel(categoryName);
         }
     }
 }
