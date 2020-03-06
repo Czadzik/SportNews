@@ -67,7 +67,7 @@ namespace SportNews.ViewModels
         #region Private Methods
         private void LoadTitleAndBody()
         {
-            // TODO
+            // TODO Wypelnij Title i Body
         }
         #endregion
 

@@ -65,7 +65,9 @@ namespace SportNews.ViewModels
         #region Private Methods
         private void LoadNewsItems()
         {
-            // TODO
+            // TODO Wypelnij liste NewsItemow
+            // w petli
+            //NewsItems.Add(new NewsItem())
 
         }
         #endregion
@@ -77,10 +79,11 @@ namespace SportNews.ViewModels
     /// </summary>
     class NewsItem 
     {
-        public NewsItem(string title, string description)
+        public NewsItem(string title, string description, string articleId)
         {
             Title = title ?? throw new ArgumentNullException(nameof(title));
             Description = description ?? throw new ArgumentNullException(nameof(description));
+            ArticleId = articleId ?? throw new ArgumentNullException(nameof(articleId));
         }
 
         public string Title { get; }

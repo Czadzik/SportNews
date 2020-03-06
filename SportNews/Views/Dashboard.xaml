@@ -5,11 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SportNews"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:behaviors="http://schemas.microsoft.com/xaml/behaviors"
         mc:Ignorable="d"
         Title="Dashboard" Height="720" Width="1300" WindowStartupLocation="CenterScreen" ResizeMode="CanResize" WindowStyle="None">
     <WindowChrome.WindowChrome>
         <WindowChrome CaptionHeight="0" ResizeBorderThickness="5" />
     </WindowChrome.WindowChrome>
+    <behaviors:Interaction.Triggers>
+        <behaviors:EventTrigger EventName="Loaded">
+            <behaviors:InvokeCommandAction Command="{Binding Loaded}" />
+        </behaviors:EventTrigger>
+    </behaviors:Interaction.Triggers>
 
     <Window.Resources>
         <Storyboard x:Key="MenuOpen">
