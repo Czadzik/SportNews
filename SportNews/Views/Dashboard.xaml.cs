@@ -57,26 +57,39 @@ namespace SportNews
 
             switch (index)
             {
-                //case 0:
-                //    GridPrincipal.Children.Clear();
-                //    GridPrincipal.Children.Add(new UserControl1());
-                //    break;
-                //case 1:
-                //    GridPrincipal.Children.Clear();
-                //    GridPrincipal.Children.Add(new UserControlInfo());
-                //    break;
-                //case 2:
-                //    GridPrincipal.Children.Clear();
-                //    GridPrincipal.Children.Add(new UserControlParzenieYerby());
-                //    break;
-                //case 3:
-                //    GridPrincipal.Children.Clear();
-                //    GridPrincipal.Children.Add(new UserControlNom());
-                //    break;
-                //case 4:
-                //    GridPrincipal.Children.Clear();
-                //    GridPrincipal.Children.Add(new UserControlSklep());
-                //    break;
+                case 0:
+                    GridPrincipal.Children.Clear();
+                    GridPrincipal.Children.Add(new UserControlAll());
+                    break;
+                case 1:
+                    GridPrincipal.Children.Clear();
+                    GridPrincipal.Children.Add(new UserControlSoccer());
+                    break;
+                case 2:
+                    GridPrincipal.Children.Clear();
+                    GridPrincipal.Children.Add(new UserControlVolleyball());
+                    break;
+                case 3:
+                    GridPrincipal.Children.Clear();
+                    GridPrincipal.Children.Add(new UserControlMMA());
+                    break;
+                case 4:
+                    GridPrincipal.Children.Clear();
+                    GridPrincipal.Children.Add(new UserControlHandball());
+                    break;
+                case 5:
+                    GridPrincipal.Children.Clear();
+                    GridPrincipal.Children.Add(new UserControlMoto());
+                    break;
+                case 6:
+                    GridPrincipal.Children.Clear();
+                    GridPrincipal.Children.Add(new UserControlTenis());
+                    break;
+                case 7:
+                    GridPrincipal.Children.Clear();
+                    GridPrincipal.Children.Add(new UserControlBasketball());
+                    break;
+
 
 
                 default:

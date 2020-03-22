@@ -1,0 +1,62 @@
+﻿<UserControl x:Class="SportNews.UserControlBasketball"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SportNews"
+             mc:Ignorable="d" 
+             d:DesignHeight="720" d:DesignWidth="800"
+             
+       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
+    <Grid Background="Black">
+        <materialDesign:TransitioningContent x:Name="TransitioningContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}">
+
+            <StackPanel>
+                <!--<Image Source="Resources/Images/all.jpg" Stretch="Fill"/>-->
+                <Grid Height="720">
+                    
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="250*"/>
+                        <ColumnDefinition Width="532*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <TextBlock Text="blabla" Foreground="White" Margin="0,0,0,634"/>
+                        <Image Source="Resources/Images/soccer_img.jpg" Margin="18,115,21,257" Stretch="UniformToFill"/>
+                        <Image Source="ViewModels/LogoPolsatSport.png" Margin="28,288,136,-149"/>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <TextBlock Text="Koszykówka" FontSize="60" FontWeight="ExtraLight" Foreground="White" />
+                        <StackPanel Margin="0,100,-0.333,-432">
+                            <ScrollViewer Background="Transparent" BorderBrush="Black" Height="617">
+                                <StackPanel Margin="15">
+                                    <TextBlock Margin="0 0 0 20" Text="Wszystkie" Foreground="White" FontSize="18" FontWeight="Bold"/>
+                                    <TextBlock Margin="0 0 0 20" TextWrapping="Wrap" Text="Yerba Mate to napój przyrządzany z listków i gałązek Ostrokrzewu paragwajskiego (Ilex paraguariensis, St.Hillaire). Jest to wiecznie zielone drzewo, osiągające w stanie dzikim nawet do 15 m wysokości. Występuje jedynie na niewielkim obszarze pomiędzy Oceanem Atlantyckim, a rzeką Paraguay, na terenie Argentyny, Paragwaju, Brazylii i Urugwaju. Również w tych krajach jest uprawiany i eksportowany na cały świat. " Foreground="White" FontSize="14"/>
+                                    <TextBlock TextWrapping="Wrap" Text="Swoją popularność Yerba Mate zawdzięcza niezwykłym właściwościom pobudzającym, wzmacniającym, oczyszczającym. Ma bardzo bogaty skład, dzięki czemu również spektrum działania jest bardzo szerokie. Ale po kolei." Foreground="White" FontSize="14"/>
+                                    <TextBlock Margin="0 0 0 20" TextWrapping="Wrap" Text="Yerba Mate to napój przyrządzany z listków i gałązek Ostrokrzewu paragwajskiego (Ilex paraguariensis, St.Hillaire). Jest to wiecznie zielone drzewo, osiągające w stanie dzikim nawet do 15 m wysokości. Występuje jedynie na niewielkim obszarze pomiędzy Oceanem Atlantyckim, a rzeką Paraguay, na terenie Argentyny, Paragwaju, Brazylii i Urugwaju. Również w tych krajach jest uprawiany i eksportowany na cały świat. " Foreground="White" FontSize="14"/>
+                                    <TextBlock TextWrapping="Wrap" Text="Swoją popularność Yerba Mate zawdzięcza niezwykłym właściwościom pobudzającym, wzmacniającym, oczyszczającym. Ma bardzo bogaty skład, dzięki czemu również spektrum działania jest bardzo szerokie. Ale po kolei." Foreground="White" FontSize="14"/>
+                                    <TextBlock Margin="0 0 0 20" TextWrapping="Wrap" Text="Yerba Mate to napój przyrządzany z listków i gałązek Ostrokrzewu paragwajskiego (Ilex paraguariensis, St.Hillaire). Jest to wiecznie zielone drzewo, osiągające w stanie dzikim nawet do 15 m wysokości. Występuje jedynie na niewielkim obszarze pomiędzy Oceanem Atlantyckim, a rzeką Paraguay, na terenie Argentyny, Paragwaju, Brazylii i Urugwaju. Również w tych krajach jest uprawiany i eksportowany na cały świat. " Foreground="White" FontSize="14"/>
+                                    <TextBlock TextWrapping="Wrap" Text="Swoją popularność Yerba Mate zawdzięcza niezwykłym właściwościom pobudzającym, wzmacniającym, oczyszczającym. Ma bardzo bogaty skład, dzięki czemu również spektrum działania jest bardzo szerokie. Ale po kolei." Foreground="White" FontSize="14"/>
+                                    <TextBlock Margin="0 0 0 20" TextWrapping="Wrap" Text="Yerba Mate to napój przyrządzany z listków i gałązek Ostrokrzewu paragwajskiego (Ilex paraguariensis, St.Hillaire). Jest to wiecznie zielone drzewo, osiągające w stanie dzikim nawet do 15 m wysokości. Występuje jedynie na niewielkim obszarze pomiędzy Oceanem Atlantyckim, a rzeką Paraguay, na terenie Argentyny, Paragwaju, Brazylii i Urugwaju. Również w tych krajach jest uprawiany i eksportowany na cały świat. " Foreground="White" FontSize="14"/>
+                                    <TextBlock TextWrapping="Wrap" Text="Swoją popularność Yerba Mate zawdzięcza niezwykłym właściwościom pobudzającym, wzmacniającym, oczyszczającym. Ma bardzo bogaty skład, dzięki czemu również spektrum działania jest bardzo szerokie. Ale po kolei." Foreground="White" FontSize="14"/>
+                                    <TextBlock Margin="0 0 0 20" TextWrapping="Wrap" Text="Yerba Mate to napój przyrządzany z listków i gałązek Ostrokrzewu paragwajskiego (Ilex paraguariensis, St.Hillaire). Jest to wiecznie zielone drzewo, osiągające w stanie dzikim nawet do 15 m wysokości. Występuje jedynie na niewielkim obszarze pomiędzy Oceanem Atlantyckim, a rzeką Paraguay, na terenie Argentyny, Paragwaju, Brazylii i Urugwaju. Również w tych krajach jest uprawiany i eksportowany na cały świat. " Foreground="White" FontSize="14"/>
+                                    <TextBlock TextWrapping="Wrap" Text="Swoją popularność Yerba Mate zawdzięcza niezwykłym właściwościom pobudzającym, wzmacniającym, oczyszczającym. Ma bardzo bogaty skład, dzięki czemu również spektrum działania jest bardzo szerokie. Ale po kolei." Foreground="White" FontSize="14"/>
+                                    <TextBlock Margin="0 0 0 20" TextWrapping="Wrap" Text="Yerba Mate to napój przyrządzany z listków i gałązek Ostrokrzewu paragwajskiego (Ilex paraguariensis, St.Hillaire). Jest to wiecznie zielone drzewo, osiągające w stanie dzikim nawet do 15 m wysokości. Występuje jedynie na niewielkim obszarze pomiędzy Oceanem Atlantyckim, a rzeką Paraguay, na terenie Argentyny, Paragwaju, Brazylii i Urugwaju. Również w tych krajach jest uprawiany i eksportowany na cały świat. " Foreground="White" FontSize="14"/>
+                                    <TextBlock TextWrapping="Wrap" Text="Swoją popularność Yerba Mate zawdzięcza niezwykłym właściwościom pobudzającym, wzmacniającym, oczyszczającym. Ma bardzo bogaty skład, dzięki czemu również spektrum działania jest bardzo szerokie. Ale po kolei." Foreground="White" FontSize="14"/>
+                                    <TextBlock Margin="0 0 0 20" TextWrapping="Wrap" Text="Yerba Mate to napój przyrządzany z listków i gałązek Ostrokrzewu paragwajskiego (Ilex paraguariensis, St.Hillaire). Jest to wiecznie zielone drzewo, osiągające w stanie dzikim nawet do 15 m wysokości. Występuje jedynie na niewielkim obszarze pomiędzy Oceanem Atlantyckim, a rzeką Paraguay, na terenie Argentyny, Paragwaju, Brazylii i Urugwaju. Również w tych krajach jest uprawiany i eksportowany na cały świat. " Foreground="White" FontSize="14"/>
+                                    <TextBlock TextWrapping="Wrap" Text="Swoją popularność Yerba Mate zawdzięcza niezwykłym właściwościom pobudzającym, wzmacniającym, oczyszczającym. Ma bardzo bogaty skład, dzięki czemu również spektrum działania jest bardzo szerokie. Ale po kolei." Foreground="White" FontSize="14"/>
+                                    <TextBlock Margin="0 0 0 20" TextWrapping="Wrap" Text="Yerba Mate to napój przyrządzany z listków i gałązek Ostrokrzewu paragwajskiego (Ilex paraguariensis, St.Hillaire). Jest to wiecznie zielone drzewo, osiągające w stanie dzikim nawet do 15 m wysokości. Występuje jedynie na niewielkim obszarze pomiędzy Oceanem Atlantyckim, a rzeką Paraguay, na terenie Argentyny, Paragwaju, Brazylii i Urugwaju. Również w tych krajach jest uprawiany i eksportowany na cały świat. " Foreground="White" FontSize="14"/>
+                                    <TextBlock TextWrapping="Wrap" Text="Swoją popularność Yerba Mate zawdzięcza niezwykłym właściwościom pobudzającym, wzmacniającym, oczyszczającym. Ma bardzo bogaty skład, dzięki czemu również spektrum działania jest bardzo szerokie. Ale po kolei." Foreground="White" FontSize="14"/>
+                                    <TextBlock Margin="0 0 0 20" TextWrapping="Wrap" Text="Yerba Mate to napój przyrządzany z listków i gałązek Ostrokrzewu paragwajskiego (Ilex paraguariensis, St.Hillaire). Jest to wiecznie zielone drzewo, osiągające w stanie dzikim nawet do 15 m wysokości. Występuje jedynie na niewielkim obszarze pomiędzy Oceanem Atlantyckim, a rzeką Paraguay, na terenie Argentyny, Paragwaju, Brazylii i Urugwaju. Również w tych krajach jest uprawiany i eksportowany na cały świat. " Foreground="White" FontSize="14"/>
+                                    <TextBlock TextWrapping="Wrap" Text="Swoją popularność Yerba Mate zawdzięcza niezwykłym właściwościom pobudzającym, wzmacniającym, oczyszczającym. Ma bardzo bogaty skład, dzięki czemu również spektrum działania jest bardzo szerokie. Ale po kolei." Foreground="White" FontSize="14"/>
+
+                                </StackPanel>
+                            </ScrollViewer>
+                        </StackPanel>
+                    </Grid>
+
+                </Grid>
+            </StackPanel>
+
+        </materialDesign:TransitioningContent>
+    </Grid>
+</UserControl>
