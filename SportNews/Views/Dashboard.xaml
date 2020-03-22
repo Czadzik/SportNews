@@ -42,6 +42,11 @@
     </Window.Triggers>
     
     <Grid>
+        <Grid Margin="0,80,70.333,0.333">
+            <Grid x:Name="GridPrincipal" Margin="0,0,-9.333,-0.333">
+                
+            </Grid>
+        </Grid>
         <Grid Height="80" VerticalAlignment="Top" Background="#FF1644A4">
             <TextBlock Text="SportNews" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36"/>
             <StackPanel VerticalAlignment="Center" Orientation="Horizontal" HorizontalAlignment="Left">

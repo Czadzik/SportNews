@@ -61,7 +61,7 @@ namespace SportNews.ViewModels
         #region Command Handlers
         private void LoadedHandler(object obj)
         {
-            LoadTitleAndBody();
+            LoadTitleAndBody(1,"asd");
         }
         #endregion
 
