@@ -3,7 +3,9 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:SportNews"
-    StartupUri="Views/MainWindow.xaml">
+    StartupUri="Views/MainWindow.xaml"
+    xmlns:valueConverters="clr-namespace:SportNews.Views.ValueConverters"
+    >
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -11,7 +13,13 @@
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Blue.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Indigo.xaml" />
+                <ResourceDictionary Source="Views/Styles/Buttons.xaml" />
+
+
+
             </ResourceDictionary.MergedDictionaries>
+
+            <valueConverters:ChannelNumberToImageConverter x:Key="ChannelNumberToImageConverter" />
         </ResourceDictionary>
     </Application.Resources>
     
