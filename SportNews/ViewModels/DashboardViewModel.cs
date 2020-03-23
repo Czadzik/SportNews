@@ -115,7 +115,7 @@ namespace SportNews.ViewModels
 
         private void LoadedHandler(object obj)
         {
-            
+           
         
         }
 

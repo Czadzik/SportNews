@@ -18,6 +18,37 @@ namespace SportNews.ViewModels
 
             Loaded = new RelayCommand(LoadedHandler);
             ReadMoreButtonClicked = new RelayCommand(ReadMoreButtonClickedHandler);
+
+
+            //TEMPORARY
+            NewsItems = new ObservableCollection<NewsItem>();
+            NewsItems.Add(new NewsItem("Przykładowy Tytuł", "Opis opis opis opis opis opis opis opis opis opis", "1"));
+            NewsItems.Add(new NewsItem("Przykładowy Tytuł", "Opis opis opis opis opis opis opis opis opis opis", "1"));
+            NewsItems.Add(new NewsItem("Przykładowy Tytuł", "Opis opis opis opis opis opis opis opis opis opis", "1"));
+            NewsItems.Add(new NewsItem("Przykładowy Tytuł", "Opis opis opis opis opis opis opis opis opis opis", "1"));
+            NewsItems.Add(new NewsItem("Przykładowy Tytuł", "Opis opis opis opis opis opis opis opis opis opis", "1"));
+            NewsItems.Add(new NewsItem("Przykładowy Tytuł", "Opis opis opis opis opis opis opis opis opis opis", "1"));
+            NewsItems.Add(new NewsItem("Przykładowy Tytuł", "Opis opis opis opis opis opis opis opis opis opis", "1"));
+            NewsItems.Add(new NewsItem("Przykładowy Tytuł", "Opis opis opis opis opis opis opis opis opis opis", "1"));
+            NewsItems.Add(new NewsItem("Przykładowy Tytuł", "Opis opis opis opis opis opis opis opis opis opis", "1"));
+            NewsItems.Add(new NewsItem("Przykładowy Tytuł", "Opis opis opis opis opis opis opis opis opis opis", "1"));
+            NewsItems.Add(new NewsItem("Przykładowy Tytuł", "Opis opis opis opis opis opis opis opis opis opis", "1"));
+            NewsItems.Add(new NewsItem("Przykładowy Tytuł", "Opis opis opis opis opis opis opis opis opis opis", "1"));
+            NewsItems.Add(new NewsItem("Przykładowy Tytuł", "Opis opis opis opis opis opis opis opis opis opis", "1"));
+            NewsItems.Add(new NewsItem("Przykładowy Tytuł", "Opis opis opis opis opis opis opis opis opis opis", "1"));
+            NewsItems.Add(new NewsItem("Przykładowy Tytuł", "Opis opis opis opis opis opis opis opis opis opis", "1"));
+            NewsItems.Add(new NewsItem("Przykładowy Tytuł", "Opis opis opis opis opis opis opis opis opis opis", "1"));
+            NewsItems.Add(new NewsItem("Przykładowy Tytuł", "Opis opis opis opis opis opis opis opis opis opis", "1"));
+            NewsItems.Add(new NewsItem("Przykładowy Tytuł", "Opis opis opis opis opis opis opis opis opis opis", "1"));
+            NewsItems.Add(new NewsItem("Przykładowy Tytuł", "Opis opis opis opis opis opis opis opis opis opis", "1"));
+            NewsItems.Add(new NewsItem("Przykładowy Tytuł", "Opis opis opis opis opis opis opis opis opis opis", "1"));
+            NewsItems.Add(new NewsItem("Przykładowy Tytuł", "Opis opis opis opis opis opis opis opis opis opis", "1"));
+            NewsItems.Add(new NewsItem("Przykładowy Tytuł", "Opis opis opis opis opis opis opis opis opis opis", "1"));
+            NewsItems.Add(new NewsItem("Przykładowy Tytuł", "Opis opis opis opis opis opis opis opis opis opis", "1"));
+            NewsItems.Add(new NewsItem("Przykładowy Tytuł", "Opis opis opis opis opis opis opis opis opis opis", "1"));
+            NewsItems.Add(new NewsItem("Przykładowy Tytuł", "Opis opis opis opis opis opis opis opis opis opis", "1"));
+            
+
         }
         #endregion
 
@@ -58,6 +89,7 @@ namespace SportNews.ViewModels
 
             // Stworz nowe okno z artykułem
             var article = new Article(articleId);
+            article.Show();
         }
 
         #endregion

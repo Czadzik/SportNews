@@ -6,7 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:SportNews.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    d:DesignHeight="450"
+    d:DesignHeight="451"
     d:DesignWidth="800"
     mc:Ignorable="d">
     <behaviors:Interaction.Triggers>
@@ -15,5 +15,41 @@
         </behaviors:EventTrigger>
     </behaviors:Interaction.Triggers>
 
-    <Grid />
+    <Grid Background="White">
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+
+        
+        <ItemsControl ItemsSource="{Binding NewsItems}">
+            <!--<ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="2" Height="auto"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>-->
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Title}" />
+                        <TextBlock Text="{Binding Description}" />
+                        <TextBlock
+                            Foreground="Blue"
+                            TextDecorations="Underline"
+                            Cursor="Hand">
+                            Czytaj dalej
+                             <behaviors:Interaction.Triggers>
+                                <behaviors:EventTrigger EventName="MouseLeftButtonDown">
+                                 <behaviors:InvokeCommandAction Command="{Binding ReadMoreButtonClicked}" CommandParameter="{Binding ArticleId}" />
+                                </behaviors:EventTrigger>
+                             </behaviors:Interaction.Triggers>
+                        </TextBlock>
+                            <Button  Command="{Binding ReadMoreButtonClicked}" CommandParameter="{Binding ArticleId}">Chuj</Button>
+                    </StackPanel>
+                        
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        </ScrollViewer>
+
+    </Grid>
+   
+
 </UserControl>

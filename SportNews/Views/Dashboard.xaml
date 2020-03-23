@@ -68,49 +68,90 @@
                 </Grid>
                 <ListView  x:Name="ListViewMenu" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Foreground="Black" SelectionChanged="ListViewMenu_SelectionChanged">
                     <ListViewItem Height="80">
+                        
                         <StackPanel Orientation="Horizontal">
+                            <behaviors:Interaction.Triggers>
+                                <behaviors:EventTrigger EventName="MouseLeftButtonDown">
+                                    <behaviors:InvokeCommandAction Command="{Binding WszystkieButtonClicked}" />
+                                </behaviors:EventTrigger>
+                            </behaviors:Interaction.Triggers>
                             <materialDesign:PackIcon Kind="Tv" Width="45" Height="45" VerticalAlignment="Center"/>
                             <TextBlock Text="Wszystkie" VerticalAlignment="Center" Margin="20 10" Foreground="White" FontSize="26"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem Height="80">
                         <StackPanel Orientation="Horizontal">
+                            <behaviors:Interaction.Triggers>
+                                <behaviors:EventTrigger EventName="MouseLeftButtonDown">
+                                    <behaviors:InvokeCommandAction Command="{Binding PilkaNoznaButtonClicked}" />
+                                </behaviors:EventTrigger>
+                            </behaviors:Interaction.Triggers>
                             <materialDesign:PackIcon Kind="Soccer" Width="45" Height="45" VerticalAlignment="Center"/>
                             <TextBlock Text="Piłka Nożna" VerticalAlignment="Center" Margin="20 10" Foreground="White" FontSize="26"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem Height="80">
                         <StackPanel Orientation="Horizontal">
+                            <behaviors:Interaction.Triggers>
+                                <behaviors:EventTrigger EventName="MouseLeftButtonDown">
+                                    <behaviors:InvokeCommandAction Command="{Binding SiatkowkaButtonClicked}" />
+                                </behaviors:EventTrigger>
+                            </behaviors:Interaction.Triggers>
                             <materialDesign:PackIcon Kind="Volleyball" Width="45" Height="45" VerticalAlignment="Center"/>
                             <TextBlock Text="Siatkówka" VerticalAlignment="Center" Margin="20 10" Foreground="White" FontSize="26"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem Height="80">
                         <StackPanel Orientation="Horizontal">
+                            <behaviors:Interaction.Triggers>
+                                <behaviors:EventTrigger EventName="MouseLeftButtonDown">
+                                    <behaviors:InvokeCommandAction Command="{Binding SportWalkiButtonClicked}" />
+                                </behaviors:EventTrigger>
+                            </behaviors:Interaction.Triggers>
                             <materialDesign:PackIcon Kind="Mma" Width="45" Height="45" VerticalAlignment="Center"/>
                             <TextBlock Text="Sporty Walki" VerticalAlignment="Center" Margin="20 10" Foreground="White" FontSize="26"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem Height="80">
                         <StackPanel Orientation="Horizontal">
+                            <behaviors:Interaction.Triggers>
+                                <behaviors:EventTrigger EventName="MouseLeftButtonDown">
+                                    <behaviors:InvokeCommandAction Command="{Binding PilkaRecznaButtonClicked}" />
+                                </behaviors:EventTrigger>
+                            </behaviors:Interaction.Triggers>
                             <materialDesign:PackIcon Kind="Handball" Width="45" Height="45" VerticalAlignment="Center"/>
                             <TextBlock Text="Piłka Ręczna" VerticalAlignment="Center" Margin="20 10" Foreground="White" FontSize="26"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem Height="80">
                         <StackPanel Orientation="Horizontal">
+                            <behaviors:Interaction.Triggers>
+                                <behaviors:EventTrigger EventName="MouseLeftButtonDown">
+                                    <behaviors:InvokeCommandAction Command="{Binding MotoButtonClicked}" />
+                                </behaviors:EventTrigger>
+                            </behaviors:Interaction.Triggers>
                             <materialDesign:PackIcon Kind="RacingHelmet" Width="45" Height="45" VerticalAlignment="Center"/>
                             <TextBlock Text="Moto" VerticalAlignment="Center" Margin="20 10" Foreground="White" FontSize="26"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem Height="80">
                         <StackPanel Orientation="Horizontal">
+                            <behaviors:Interaction.Triggers>
+                                <behaviors:EventTrigger EventName="MouseLeftButtonDown">
+                                    <behaviors:InvokeCommandAction Command="{Binding TenisButtonClicked}" />
+                                </behaviors:EventTrigger>
+                            </behaviors:Interaction.Triggers>
                             <materialDesign:PackIcon Kind="Tennis" Width="45" Height="45" VerticalAlignment="Center"/>
                             <TextBlock Text="Tenis" VerticalAlignment="Center" Margin="20 10" Foreground="White" FontSize="26"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem Height="80">
                         <StackPanel Orientation="Horizontal">
+                            <behaviors:Interaction.Triggers>
+                                <behaviors:EventTrigger EventName="MouseLeftButtonDown">
+                                    <behaviors:InvokeCommandAction Command="{Binding KoszykowkaButtonClicked}" />
+                                </behaviors:EventTrigger>
+                            </behaviors:Interaction.Triggers>
                             <materialDesign:PackIcon Kind="Basketball" Width="45" Height="45" VerticalAlignment="Center"/>
                             <TextBlock Text="Koszykówka" VerticalAlignment="Center" Margin="20 10" Foreground="White" FontSize="26"/>
                         </StackPanel>
@@ -120,6 +161,10 @@
                     <Grid x:Name="GridCursor" Margin="0 -640"  Background="#fff" Width="5" HorizontalAlignment="Right" Height="80" VerticalAlignment="Top"/>
                 </materialDesign:TransitioningContent>
             </StackPanel>
+        </Grid>
+        <Grid Margin="100 100">
+            <ContentControl
+            Content="{Binding CurrentPage, UpdateSourceTrigger=PropertyChanged}" />
         </Grid>
     </Grid>
 </Window>

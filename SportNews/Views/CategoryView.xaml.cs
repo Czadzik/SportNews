@@ -26,6 +26,8 @@ namespace SportNews.Views
             InitializeComponent();
 
             DataContext = new CategoryViewModel(categoryName);
+
+            
         }
     }
 }

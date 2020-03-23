@@ -15,5 +15,11 @@
             <behaviors:InvokeCommandAction Command="{Binding Loaded}" />
         </behaviors:EventTrigger>
     </behaviors:Interaction.Triggers>
-    <Grid />
+
+
+    <Grid>
+        <TextBlock Text="{Binding Title}" />
+        <TextBlock Text="{Binding Body}" />
+
+    </Grid>
 </Window>
