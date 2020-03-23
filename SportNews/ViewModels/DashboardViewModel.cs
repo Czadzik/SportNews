@@ -16,14 +16,14 @@ namespace SportNews.ViewModels
         {
             Pages = new Dictionary<string, UserControl>
             {
-                {"wszystkie", new CategoryView("wszystkie") },
-                {"pilkaNozna", new CategoryView("pilkaNozna") },
-                {"siatkowka", new CategoryView("siatkowka") },
-                {"sportWalki", new CategoryView("sportWalki") },
-                {"pilkaReczna", new CategoryView("pilkaReczna") },
-                {"moto", new CategoryView("moto") },
-                {"tenis", new CategoryView("tenis") },
-                {"koszykowka", new CategoryView("koszykowka") },
+                {"wszystkie", new CategoryView(-1) },
+                {"pilkaNozna", new CategoryView(0) },
+                {"siatkowka", new CategoryView(1) },
+                {"sportyWalki", new CategoryView(2) },
+                {"pilkaReczna", new CategoryView(3) },
+                {"moto", new CategoryView(4) },
+                {"tenis", new CategoryView(5) },
+                {"koszykowka", new CategoryView(6) },
             };
             WszystkieButtonClicked = new RelayCommand(WszystkieButtonClickedHandler);
             PilkaNoznaButtonClicked = new RelayCommand(PilkaNoznaButtonClickedHandler);
@@ -115,8 +115,7 @@ namespace SportNews.ViewModels
 
         private void LoadedHandler(object obj)
         {
-           
-        
+            CurrentPage = Pages["wszystkie"];
         }
 
 

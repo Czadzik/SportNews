@@ -31,7 +31,6 @@ namespace SportNews.ViewModels
         public string Title
         {
             get => _title;
-
             set
             {
                 if (_title == value) return;
@@ -41,12 +40,10 @@ namespace SportNews.ViewModels
             }
         }
   
-
         private string _body;
         public string Body
         {
             get => _body;
-
             set
             {
                 if (_body == value) return;
@@ -61,24 +58,20 @@ namespace SportNews.ViewModels
         #region Command Handlers
         private void LoadedHandler(object obj)
         {
-            LoadTitleAndBody(1,"asd");
+            //LoadTitleAndBody(1,"asd"); TODO wlaczyc to
+            Title = "testowe title";
+            Body = "testowe bodytestowe bodytestowe bodytestowe bodytestowe bodytestowe bodytestowe bodytestowe body";
         }
         #endregion
 
         #region Private Methods
 
         private void LoadTitleAndBody(int channel, string Articleid)
-        {
-           
+        { 
             MongoCRUD db = new MongoCRUD("SportService_Database");
             var AllChannels = db.LoadRecords<ChanelMongoDatabesPatern>("channels");
             _body = AllChannels[channel].item.Where(x => x.guid == Articleid).Select(s => s.link).ToString();
             _title = AllChannels[channel].item.Where(x => x.guid == Articleid).Select(s => s.title).ToString();
-
-
-
-
-
         }
 
         #endregion
