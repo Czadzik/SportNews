@@ -47,7 +47,7 @@
                 
             </Grid>
         </Grid>
-        <Grid Height="80" VerticalAlignment="Top" Background="#FF1644A4">
+        <Grid Height="80" VerticalAlignment="Top" Background="#FF1644A4" MouseDown="Grid_MouseDown">
             <TextBlock Text="SportNews" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36"/>
             <StackPanel VerticalAlignment="Center" Orientation="Horizontal" HorizontalAlignment="Left">
                 <Button x:Name="ButtonCloseApp" Background="#FF1644A4" Click="ButtonCloseApp_Click" BorderThickness="0" BorderBrush="#FF1644A4" materialDesign:ShadowAssist.Darken="False" >
@@ -71,103 +71,86 @@
                         <materialDesign:PackIcon Kind="HamburgerMenu" Height="45" Width="45" />
                     </Button>
                 </Grid>
-                <ListView  x:Name="ListViewMenu" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Foreground="Black" SelectionChanged="ListViewMenu_SelectionChanged">
+                <ListView  x:Name="ListViewMenu" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Foreground="Black">
                     <ListViewItem Height="80">
-                        
-                        <StackPanel Orientation="Horizontal">
-                            <behaviors:Interaction.Triggers>
-                                <behaviors:EventTrigger EventName="MouseLeftButtonDown">
-                                    <behaviors:InvokeCommandAction Command="{Binding WszystkieButtonClicked}" />
-                                </behaviors:EventTrigger>
-                            </behaviors:Interaction.Triggers>
-                            <materialDesign:PackIcon Kind="Tv" Width="45" Height="45" VerticalAlignment="Center"/>
+                        <Button Command="{Binding WszystkieButtonClicked}" Style="{StaticResource TransparentStyle}">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Tv" Width="45" Height="45" VerticalAlignment="Center"/>
                             <TextBlock Text="Wszystkie" VerticalAlignment="Center" Margin="20 10" Foreground="White" FontSize="26"/>
                         </StackPanel>
+                        </Button>
                     </ListViewItem>
+                    
                     <ListViewItem Height="80">
-                        <StackPanel Orientation="Horizontal">
-                            <behaviors:Interaction.Triggers>
-                                <behaviors:EventTrigger EventName="MouseLeftButtonDown">
-                                    <behaviors:InvokeCommandAction Command="{Binding PilkaNoznaButtonClicked}" />
-                                </behaviors:EventTrigger>
-                            </behaviors:Interaction.Triggers>
-                            <materialDesign:PackIcon Kind="Soccer" Width="45" Height="45" VerticalAlignment="Center"/>
+                        <Button Command="{Binding PilkaNoznaButtonClicked}" Style="{StaticResource TransparentStyle}">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Soccer" Width="45" Height="45" VerticalAlignment="Center"/>
                             <TextBlock Text="Piłka Nożna" VerticalAlignment="Center" Margin="20 10" Foreground="White" FontSize="26"/>
                         </StackPanel>
+                        </Button>
                     </ListViewItem>
+                    
                     <ListViewItem Height="80">
-                        <StackPanel Orientation="Horizontal">
-                            <behaviors:Interaction.Triggers>
-                                <behaviors:EventTrigger EventName="MouseLeftButtonDown">
-                                    <behaviors:InvokeCommandAction Command="{Binding SiatkowkaButtonClicked}" />
-                                </behaviors:EventTrigger>
-                            </behaviors:Interaction.Triggers>
-                            <materialDesign:PackIcon Kind="Volleyball" Width="45" Height="45" VerticalAlignment="Center"/>
+                        <Button Command="{Binding SiatkowkaButtonClicked}" Style="{StaticResource TransparentStyle}">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Volleyball" Width="45" Height="45" VerticalAlignment="Center"/>
                             <TextBlock Text="Siatkówka" VerticalAlignment="Center" Margin="20 10" Foreground="White" FontSize="26"/>
                         </StackPanel>
+                        </Button>
                     </ListViewItem>
+                    
                     <ListViewItem Height="80">
-                        <StackPanel Orientation="Horizontal">
-                            <behaviors:Interaction.Triggers>
-                                <behaviors:EventTrigger EventName="MouseLeftButtonDown">
-                                    <behaviors:InvokeCommandAction Command="{Binding SportWalkiButtonClicked}" />
-                                </behaviors:EventTrigger>
-                            </behaviors:Interaction.Triggers>
-                            <materialDesign:PackIcon Kind="Mma" Width="45" Height="45" VerticalAlignment="Center"/>
+                        <Button Command="{Binding SportWalkiButtonClicked}" Style="{StaticResource TransparentStyle}">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Mma" Width="45" Height="45" VerticalAlignment="Center"/>
                             <TextBlock Text="Sporty Walki" VerticalAlignment="Center" Margin="20 10" Foreground="White" FontSize="26"/>
                         </StackPanel>
+                        </Button>
                     </ListViewItem>
+                    
                     <ListViewItem Height="80">
-                        <StackPanel Orientation="Horizontal">
-                            <behaviors:Interaction.Triggers>
-                                <behaviors:EventTrigger EventName="MouseLeftButtonDown">
-                                    <behaviors:InvokeCommandAction Command="{Binding PilkaRecznaButtonClicked}" />
-                                </behaviors:EventTrigger>
-                            </behaviors:Interaction.Triggers>
-                            <materialDesign:PackIcon Kind="Handball" Width="45" Height="45" VerticalAlignment="Center"/>
+                        <Button Command="{Binding PilkaRecznaButtonClicked}" Style="{StaticResource TransparentStyle}">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Handball" Width="45" Height="45" VerticalAlignment="Center"/>
                             <TextBlock Text="Piłka Ręczna" VerticalAlignment="Center" Margin="20 10" Foreground="White" FontSize="26"/>
                         </StackPanel>
+                        </Button>
                     </ListViewItem>
+                    
                     <ListViewItem Height="80">
-                        <StackPanel Orientation="Horizontal">
-                            <behaviors:Interaction.Triggers>
-                                <behaviors:EventTrigger EventName="MouseLeftButtonDown">
-                                    <behaviors:InvokeCommandAction Command="{Binding MotoButtonClicked}" />
-                                </behaviors:EventTrigger>
-                            </behaviors:Interaction.Triggers>
-                            <materialDesign:PackIcon Kind="RacingHelmet" Width="45" Height="45" VerticalAlignment="Center"/>
+                        <Button Command="{Binding MotoButtonClicked}" Style="{StaticResource TransparentStyle}">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="RacingHelmet" Width="45" Height="45" VerticalAlignment="Center"/>
                             <TextBlock Text="Moto" VerticalAlignment="Center" Margin="20 10" Foreground="White" FontSize="26"/>
                         </StackPanel>
+                        </Button>
                     </ListViewItem>
+                    
                     <ListViewItem Height="80">
-                        <StackPanel Orientation="Horizontal">
-                            <behaviors:Interaction.Triggers>
-                                <behaviors:EventTrigger EventName="MouseLeftButtonDown">
-                                    <behaviors:InvokeCommandAction Command="{Binding TenisButtonClicked}" />
-                                </behaviors:EventTrigger>
-                            </behaviors:Interaction.Triggers>
-                            <materialDesign:PackIcon Kind="Tennis" Width="45" Height="45" VerticalAlignment="Center"/>
+                        <Button Command="{Binding TenisButtonClicked}" Style="{StaticResource TransparentStyle}">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Tennis" Width="45" Height="45" VerticalAlignment="Center"/>
                             <TextBlock Text="Tenis" VerticalAlignment="Center" Margin="20 10" Foreground="White" FontSize="26"/>
                         </StackPanel>
+                        </Button>
                     </ListViewItem>
+                    
                     <ListViewItem Height="80">
-                        <StackPanel Orientation="Horizontal">
-                            <behaviors:Interaction.Triggers>
-                                <behaviors:EventTrigger EventName="MouseLeftButtonDown">
-                                    <behaviors:InvokeCommandAction Command="{Binding KoszykowkaButtonClicked}" />
-                                </behaviors:EventTrigger>
-                            </behaviors:Interaction.Triggers>
-                            <materialDesign:PackIcon Kind="Basketball" Width="45" Height="45" VerticalAlignment="Center"/>
+                        <Button Command="{Binding KoszykowkaButtonClicked}" Style="{StaticResource TransparentStyle}">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Basketball" Width="45" Height="45" VerticalAlignment="Center"/>
                             <TextBlock Text="Koszykówka" VerticalAlignment="Center" Margin="20 10" Foreground="White" FontSize="26"/>
                         </StackPanel>
+                        </Button>
                     </ListViewItem>
+                    
                 </ListView>
-                <materialDesign:TransitioningContent x:Name="TransitioningContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromRight, Duration=0:0:0.2}">
+                <!--<materialDesign:TransitioningContent x:Name="TransitioningContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromRight, Duration=0:0:0.2}">
                     <Grid x:Name="GridCursor" Margin="0 -640"  Background="#fff" Width="5" HorizontalAlignment="Right" Height="80" VerticalAlignment="Top"/>
-                </materialDesign:TransitioningContent>
+                </materialDesign:TransitioningContent>-->
             </StackPanel>
         </Grid>
-        <Grid Margin="100 100">
+        <Grid Margin="100 100" Panel.ZIndex="-1">
             <ContentControl
             Content="{Binding CurrentPage, UpdateSourceTrigger=PropertyChanged}" />
         </Grid>

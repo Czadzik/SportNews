@@ -21,13 +21,11 @@ namespace SportNews.Views
     /// </summary>
     public partial class CategoryView : UserControl
     {
-        public CategoryView(string categoryName)
+        public CategoryView(int channelNumber)
         {
             InitializeComponent();
+            DataContext = new CategoryViewModel(channelNumber);
 
-            DataContext = new CategoryViewModel(categoryName);
-
-            
         }
     }
 }

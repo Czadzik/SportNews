@@ -50,59 +50,24 @@ namespace SportNews
             this.Close();
         }
 
-        private void ListViewMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            int index = ListViewMenu.SelectedIndex;
-            MoveCursorMenu(index);
-
-            switch (index)
-            {
-                case 0:
-                    GridPrincipal.Children.Clear();
-                    GridPrincipal.Children.Add(new UserControlAll());
-                    break;
-                case 1:
-                    GridPrincipal.Children.Clear();
-                    GridPrincipal.Children.Add(new UserControlSoccer());
-                    break;
-                case 2:
-                    GridPrincipal.Children.Clear();
-                    GridPrincipal.Children.Add(new UserControlVolleyball());
-                    break;
-                case 3:
-                    GridPrincipal.Children.Clear();
-                    GridPrincipal.Children.Add(new UserControlMMA());
-                    break;
-                case 4:
-                    GridPrincipal.Children.Clear();
-                    GridPrincipal.Children.Add(new UserControlHandball());
-                    break;
-                case 5:
-                    GridPrincipal.Children.Clear();
-                    GridPrincipal.Children.Add(new UserControlMoto());
-                    break;
-                case 6:
-                    GridPrincipal.Children.Clear();
-                    GridPrincipal.Children.Add(new UserControlTenis());
-                    break;
-                case 7:
-                    GridPrincipal.Children.Clear();
-                    GridPrincipal.Children.Add(new UserControlBasketball());
-                    break;
-
-
-
-                default:
-                    break;
-            }
+            if (e.ChangedButton == MouseButton.Left)
+                DragMove();
         }
 
-        private void MoveCursorMenu(int index)
-        {
-            TransitioningContentSlide.OnApplyTemplate();
-            GridCursor.Margin = new Thickness(0, (-640 + (80 * index)), 0, 0);
+        //private void ListViewMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        //{
+        //    int index = ListViewMenu.SelectedIndex;
+        //    MoveCursorMenu(index);      
+        //}
 
-        }
+        //private void MoveCursorMenu(int index)
+        //{
+        //    TransitioningContentSlide.OnApplyTemplate();
+        //    GridCursor.Margin = new Thickness(0, (-640 + (80 * index)), 0, 0);
+
+        //}
 
     }
 }
