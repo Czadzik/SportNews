@@ -28,7 +28,7 @@
             <TextBlock Text="możesz być na bierząco! " FontSize="30" Foreground="#fff" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,18"/>
         </Grid>
 
-        <Button x:Name="ButtonGoToDashboard" Margin="651,499,210,141" Height="Auto" Content="WYPRÓBUJ TERAZ" Panel.ZIndex="-1" Foreground="#000" Background="#f3f3f3" FontSize="40" FontStyle="Italic" FontWeight="Thin" BorderThickness="0" SnapsToDevicePixels="True" Click="ButtonGoToDashboard_Click"/>
+        <Button x:Name="ButtonGoToDashboard" Margin="651,499,210,141" Height="Auto" Content="WYPRÓBUJ TERAZ" Panel.ZIndex="1" Foreground="white" Background="#008000" FontSize="40" FontStyle="Italic" FontWeight="Medium"  BorderThickness="2" SnapsToDevicePixels="True" BorderBrush="Black" Click="ButtonGoToDashboard_Click"/>
 
 
 

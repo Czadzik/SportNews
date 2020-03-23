@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SportNews.Models;
 
 namespace SportNews.ViewModels
 {
@@ -60,15 +61,26 @@ namespace SportNews.ViewModels
         #region Command Handlers
         private void LoadedHandler(object obj)
         {
-            LoadTitleAndBody();
+            LoadTitleAndBody(1,"asd");
         }
         #endregion
 
         #region Private Methods
-        private void LoadTitleAndBody()
+
+        private void LoadTitleAndBody(int channel, string Articleid)
         {
-            // TODO Wypelnij Title i Body
+           
+            MongoCRUD db = new MongoCRUD("SportService_Database");
+            var AllChannels = db.LoadRecords<ChanelMongoDatabesPatern>("channels");
+            _body = AllChannels[channel].item.Where(x => x.guid == Articleid).Select(s => s.link).ToString();
+            _title = AllChannels[channel].item.Where(x => x.guid == Articleid).Select(s => s.title).ToString();
+
+
+
+
+
         }
+
         #endregion
 
     }
