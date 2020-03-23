@@ -16,11 +16,11 @@
     </behaviors:Interaction.Triggers>
 
 
- 
+    <StackPanel>
+        <TextBlock FontSize="30" Text="{Binding ChannelName}" Panel.ZIndex="2"/>
         <Grid Background="White" Opacity="0.5" >
         <Image Source="{Binding ChannelNumber, Converter={StaticResource ChannelNumberToImageConverter}}" Stretch="UniformToFill" Panel.ZIndex="-1"/>
-        <!--Nazwa kanału - Binding ChannelName-->
-            <!--<TextBlock FontSize="30" Text="{Binding ChannelName}" Panel.ZIndex="2"/>-->
+          
         <ScrollViewer VerticalScrollBarVisibility="Auto" Panel.ZIndex="1">
                 <ItemsControl ItemsSource="{Binding NewsItems}">
                     <ItemsControl.ItemsPanel>
@@ -47,7 +47,8 @@
                 </ItemsControl>
             </ScrollViewer>
         </Grid>
-   
+    </StackPanel>
+
 
 
 

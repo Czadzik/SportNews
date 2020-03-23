@@ -16,47 +16,12 @@ namespace SportNews.ViewModels
         #region Constructor
         public CategoryViewModel(int channelNumber)
         {
-            //db = new MongoCRUD("SportService_Database"); TODO wlaczyc
+            db = new MongoCRUD("SportService_Database");
             ChannelNumber = channelNumber;
-
-
-            //var AllChanels= db.LoadRecords<ChanelMongoDatabesPatern>("channels"); TODO wlaczyc
-
-            ChannelName = "Nazwa kategorii";
-            //ChannelName = AllChanels[channelNumber].title; TODO wlaczyc
+            ChannelName = SetChannelName(channelNumber);
 
             Loaded = new RelayCommand(LoadedHandler);
-            
-
-            //TEMPORARY
-            NewsItems = new ObservableCollection<NewsItem>();
-            NewsItems.Add(new NewsItem("Przykładowy Tytuł", "Opis opis opis opis opis opis opis opis opis opis", "1"));
-            NewsItems.Add(new NewsItem("Przykładowy Tytuł", "Opis opis opis opis opis opis opis opis opis opis", "1"));
-            NewsItems.Add(new NewsItem("Przykładowy Tytuł", "Opis opis opis opis opis opis opis opis opis opis", "1"));
-            NewsItems.Add(new NewsItem("Przykładowy Tytuł", "Opis opis opis opis opis opis opis opis opis opis", "1"));
-            NewsItems.Add(new NewsItem("Przykładowy Tytuł", "Opis opis opis opis opis opis opis opis opis opis", "1"));
-            NewsItems.Add(new NewsItem("Przykładowy Tytuł", "Opis opis opis opis opis opis opis opis opis opis", "1"));
-            NewsItems.Add(new NewsItem("Przykładowy Tytuł", "Opis opis opis opis opis opis opis opis opis opis", "1"));
-            NewsItems.Add(new NewsItem("Przykładowy Tytuł", "Opis opis opis opis opis opis opis opis opis opis", "1"));
-            NewsItems.Add(new NewsItem("Przykładowy Tytuł", "Opis opis opis opis opis opis opis opis opis opis", "1"));
-            NewsItems.Add(new NewsItem("Przykładowy Tytuł", "Opis opis opis opis opis opis opis opis opis opis", "1"));
-            NewsItems.Add(new NewsItem("Przykładowy Tytuł", "Opis opis opis opis opis opis opis opis opis opis", "1"));
-            NewsItems.Add(new NewsItem("Przykładowy Tytuł", "Opis opis opis opis opis opis opis opis opis opis", "1"));
-            NewsItems.Add(new NewsItem("Przykładowy Tytuł", "Opis opis opis opis opis opis opis opis opis opis", "1"));
-            NewsItems.Add(new NewsItem("Przykładowy Tytuł", "Opis opis opis opis opis opis opis opis opis opis", "1"));
-            NewsItems.Add(new NewsItem("Przykładowy Tytuł", "Opis opis opis opis opis opis opis opis opis opis", "1"));
-            NewsItems.Add(new NewsItem("Przykładowy Tytuł", "Opis opis opis opis opis opis opis opis opis opis", "1"));
-            NewsItems.Add(new NewsItem("Przykładowy Tytuł", "Opis opis opis opis opis opis opis opis opis opis", "1"));
-            NewsItems.Add(new NewsItem("Przykładowy Tytuł", "Opis opis opis opis opis opis opis opis opis opis", "1"));
-            NewsItems.Add(new NewsItem("Przykładowy Tytuł", "Opis opis opis opis opis opis opis opis opis opis", "1"));
-            NewsItems.Add(new NewsItem("Przykładowy Tytuł", "Opis opis opis opis opis opis opis opis opis opis", "1"));
-            NewsItems.Add(new NewsItem("Przykładowy Tytuł", "Opis opis opis opis opis opis opis opis opis opis", "1"));
-            NewsItems.Add(new NewsItem("Przykładowy Tytuł", "Opis opis opis opis opis opis opis opis opis opis", "1"));
-            NewsItems.Add(new NewsItem("Przykładowy Tytuł", "Opis opis opis opis opis opis opis opis opis opis", "1"));
-            NewsItems.Add(new NewsItem("Przykładowy Tytuł", "Opis opis opis opis opis opis opis opis opis opis", "1"));
-            NewsItems.Add(new NewsItem("Przykładowy Tytuł", "Opis opis opis opis opis opis opis opis opis opis", "1"));
-            
-
+            NewsItems = new ObservableCollection<NewsItem>();    
         }
         #endregion
 
@@ -113,23 +78,80 @@ namespace SportNews.ViewModels
         #region Command Handlers
         private void LoadedHandler(object obj)
         {
-            //LoadNewsItems(); TODO start this
-
+            LoadNewsItems();
         }
         #endregion
 
         #region Private Methods
         private void LoadNewsItems()
         {
-            var AllChannels = db.LoadRecords<ChanelMongoDatabesPatern>("channels");
+            var allChannels = db.LoadRecords<ChanelMongoDatabesPatern>("channels");
 
-            // TODO jesli channelNumber == -1
-            // pobierz wszystkie artykuly z wszystkich kategorii
-           
+            if (ChannelNumber == -1)
+            {
+                for (int j = 0; j < 10; j++)
+                {
+                    NewsItems.Add(new NewsItem(allChannels[0].item[j].title, allChannels[0].item[j].description, allChannels[0].item[j].guid));
+                    NewsItems.Add(new NewsItem(allChannels[1].item[j].title, allChannels[1].item[j].description, allChannels[1].item[j].guid));
+                    NewsItems.Add(new NewsItem(allChannels[2].item[j].title, allChannels[2].item[j].description, allChannels[2].item[j].guid));
+                    NewsItems.Add(new NewsItem(allChannels[3].item[j].title, allChannels[3].item[j].description, allChannels[3].item[j].guid));
+                    NewsItems.Add(new NewsItem(allChannels[4].item[j].title, allChannels[4].item[j].description, allChannels[4].item[j].guid));
+                    NewsItems.Add(new NewsItem(allChannels[5].item[j].title, allChannels[5].item[j].description, allChannels[5].item[j].guid));
+                    NewsItems.Add(new NewsItem(allChannels[6].item[j].title, allChannels[6].item[j].description, allChannels[6].item[j].guid));
+                }
+            }
+            else
+            {
                 for (int j = 0; j < 50; j++)
                 {
-                    NewsItems.Add(new NewsItem(AllChannels[ChannelNumber].item[j].title, AllChannels[ChannelNumber].item[j].description,j.ToString()));
+                    NewsItems.Add(new NewsItem(allChannels[ChannelNumber].item[j].title, allChannels[ChannelNumber].item[j].description, allChannels[ChannelNumber].item[j].guid));
                 }
+            }
+        }
+
+        private string SetChannelName(int id)
+        {
+            //Numery kanałów -1:Wszystkie 0:Piłka Nożna 1:Siatkówka 2:Sporty Walki 3:Piłka Ręczna 4:Moto 5:Tenis 6:Koszykówka
+            switch (id)
+            {
+                case -1:
+                    return "Wszystkie";
+                    break;
+
+                case 0:
+                    return "Piłka Nożna";
+                    break;
+
+                case 1:
+                    return "Siatkówka";
+                    break;
+
+                case 2:
+                    return "Sporty Walki";
+                    break;
+
+                case 3:
+                    return "Piłka Ręczna";
+                    break;
+
+                case 4:
+                    return "Moto";
+                    break;
+
+                case 5:
+                    return "Tenis";
+                    break;
+
+                case 6:
+                    return "Koszykówka";
+                    break;
+
+                default:
+                    return "Wszystkie";
+                    break;
+
+            }
+
         }
         #endregion
 

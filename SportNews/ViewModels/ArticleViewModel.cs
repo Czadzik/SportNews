@@ -58,20 +58,31 @@ namespace SportNews.ViewModels
         #region Command Handlers
         private void LoadedHandler(object obj)
         {
-            //LoadTitleAndBody(1,"asd"); TODO wlaczyc to
-            Title = "testowe title";
-            Body = "testowe bodytestowe bodytestowe bodytestowe bodytestowe bodytestowe bodytestowe bodytestowe body";
+            LoadTitleAndBody(articleId);
         }
         #endregion
 
         #region Private Methods
 
-        private void LoadTitleAndBody(int channel, string Articleid)
+        private void LoadTitleAndBody(string Articleid)
         { 
             MongoCRUD db = new MongoCRUD("SportService_Database");
             var AllChannels = db.LoadRecords<ChanelMongoDatabesPatern>("channels");
-            _body = AllChannels[channel].item.Where(x => x.guid == Articleid).Select(s => s.link).ToString();
-            _title = AllChannels[channel].item.Where(x => x.guid == Articleid).Select(s => s.title).ToString();
+            //Body = AllChannels[0].item.Where(x => x.guid == Articleid).Select(s => s.link).ToString();
+            //Title = AllChannels[0].item.Where(x => x.guid == Articleid).Select(s => s.title).ToString();
+
+           // Body = AllChannels[0].item.Where(x => x.guid == Articleid).Select(s => s.link).ToString();
+
+            var items = AllChannels[0].item.Where(x => x.guid == Articleid);
+           
+            foreach (var item in items)
+            {
+                Body = item.link;
+                Title = item.title;
+            }
+
+            //Body = AllChannels.Select(x => x.item.First(y => y.guid == Articleid)).Select(s => s.link).ToString();
+            // Title = AllChannels.Select(x => x.item.First(y => y.guid == Articleid)).Select(s => s.title).ToString();
         }
 
         #endregion

@@ -18,8 +18,12 @@
 
 
     <Grid>
+        <StackPanel>
         <TextBlock Text="{Binding Title}" />
+        
         <TextBlock Text="{Binding Body}" />
+
+        </StackPanel>
 
     </Grid>
 </Window>
