@@ -8,9 +8,8 @@ using MongoDB.Bson;
 
 namespace SportNews.Models
 {
-   
 
-public class Enclosure
+    public class Enclosure
     {
         public string url { get; set; }
         public string length { get; set; }
@@ -24,10 +23,10 @@ public class Enclosure
         public string link { get; set; }
         public string pubDate { get; set; }
         public string guid { get; set; }
-        public IList<Enclosure> enclosure { get; set; }
+        public List<Enclosure> enclosure { get; set; }
     }
 
-    public class ChanelMongoDatabesPatern
+    public class Channel
     {
         public ObjectId _id { get; set; }
         public string title { get; set; }
@@ -35,9 +34,7 @@ public class Enclosure
         public string language { get; set; }
         public string copyright { get; set; }
         public string lastBuildDate { get; set; }
-        public IList<Item> item { get; set; }
+        public List<Item> item { get; set; }
     }
-
-
 
 }

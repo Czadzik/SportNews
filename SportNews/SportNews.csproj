@@ -242,7 +242,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Models\ChanelMongoDatabesPatern.cs" />
+    <Compile Include="Models\MongoDBPattern.cs" />
     <Compile Include="Models\MongoCRUD.cs" />
     <Compile Include="UserControl\UserControlAll.xaml.cs">
       <DependentUpon>UserControlAll.xaml</DependentUpon>

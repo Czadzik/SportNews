@@ -85,7 +85,7 @@ namespace SportNews.ViewModels
         #region Private Methods
         private void LoadNewsItems()
         {
-            var allChannels = db.LoadRecords<ChanelMongoDatabesPatern>("channels");
+            var allChannels = db.LoadRecords<Channel>("channels");
 
             if (ChannelNumber == -1)
             {
