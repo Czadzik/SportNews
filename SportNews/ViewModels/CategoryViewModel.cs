@@ -10,12 +10,15 @@ using SportNews.Models;
 
 namespace SportNews.ViewModels
 {
+    //Numery kanałów 0:Piłka Nożna 1:Siatkówka 2:Sporty Walki 3:Piłka Ręczna 4:Moto 5:Tenis 6:Koszykówka
     class CategoryViewModel : ViewModelBase
     {
+        MongoCRUD db = new MongoCRUD("SportService_Database");
         #region Constructor
-        public CategoryViewModel(string categoryName)
+        public CategoryViewModel(int channelNumber)
         {
-            CategoryName = categoryName;
+            var AllChanels= db.LoadRecords<ChanelMongoDatabesPatern>("channels");
+            CategoryName = AllChanels[channelNumber].title;
 
             Loaded = new RelayCommand(LoadedHandler);
             ReadMoreButtonClicked = new RelayCommand(ReadMoreButtonClickedHandler);
@@ -64,19 +67,17 @@ namespace SportNews.ViewModels
         #endregion
 
         #region Private Methods
-        private void LoadNewsItems()
+        private void LoadNewsItems(int channelNumber)
         {
-            MongoCRUD db = new MongoCRUD("SportService_Database");
+          
             var AllChannels = db.LoadRecords<ChanelMongoDatabesPatern>("channels");
-            for (int i = 0; i < 7; i++)
-            {
+           
                 for (int j = 0; j < 50; j++)
                 {
-                    NewsItems.Add(new NewsItem(AllChannels[i].item[j].title, AllChannels[i].item[j].description,j.ToString()));
+                    NewsItems.Add(new NewsItem(AllChannels[channelNumber].item[j].title, AllChannels[channelNumber].item[j].description,j.ToString()));
                 }
 
 
-            }
 
         }
         #endregion

@@ -21,6 +21,14 @@
         <e p="obj" t="ExcludeRecursive">
           <e p="Release" t="Include">
             <e p="App.g.cs" t="Include" />
+            <e p="UserControlAll.g.cs" t="Include" />
+            <e p="UserControlBasketball.g.cs" t="Include" />
+            <e p="UserControlHandball.g.cs" t="Include" />
+            <e p="UserControlMMA.g.cs" t="Include" />
+            <e p="UserControlMoto.g.cs" t="Include" />
+            <e p="UserControlSoccer.g.cs" t="Include" />
+            <e p="UserControlTenis.g.cs" t="Include" />
+            <e p="UserControlVolleyball.g.cs" t="Include" />
             <e p="Views" t="Include">
               <e p="Article.g.cs" t="Include" />
               <e p="CategoryView.g.cs" t="Include" />
@@ -40,9 +48,37 @@
         <e p="Resources" t="Include">
           <e p="Fonts" t="Include" />
           <e p="Icons" t="Include" />
-          <e p="Images" t="Include" />
+          <e p="Images" t="Include">
+            <e p="all.jpg" t="Include" />
+            <e p="background_soccer.jpg" t="Include" />
+            <e p="basketball.jpg" t="Include" />
+            <e p="handball.jpg" t="Include" />
+            <e p="mma.jpg" t="Include" />
+            <e p="moto.jpg" t="Include" />
+            <e p="soccer_img.jpg" t="Include" />
+            <e p="tennis.jpg" t="Include" />
+            <e p="volleyball.jpg" t="Include" />
+          </e>
         </e>
         <e p="SportNews.csproj" t="IncludeRecursive" />
+        <e p="UserControl" t="Include">
+          <e p="UserControlAll.xaml" t="Include" />
+          <e p="UserControlAll.xaml.cs" t="Include" />
+          <e p="UserControlBasketball.xaml" t="Include" />
+          <e p="UserControlBasketball.xaml.cs" t="Include" />
+          <e p="UserControlHandball.xaml" t="Include" />
+          <e p="UserControlHandball.xaml.cs" t="Include" />
+          <e p="UserControlMMA.xaml" t="Include" />
+          <e p="UserControlMMA.xaml.cs" t="Include" />
+          <e p="UserControlMoto.xaml" t="Include" />
+          <e p="UserControlMoto.xaml.cs" t="Include" />
+          <e p="UserControlSoccer.xaml" t="Include" />
+          <e p="UserControlSoccer.xaml.cs" t="Include" />
+          <e p="UserControlTenis.xaml" t="Include" />
+          <e p="UserControlTenis.xaml.cs" t="Include" />
+          <e p="UserControlVolleyball.xaml" t="Include" />
+          <e p="UserControlVolleyball.xaml.cs" t="Include" />
+        </e>
         <e p="ViewModels" t="Include">
           <e p="ArticleViewModel.cs" t="Include" />
           <e p="CategoryViewModel.cs" t="Include" />

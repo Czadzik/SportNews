@@ -69,11 +69,11 @@ namespace SportNews.ViewModels
 
         private void LoadTitleAndBody(int channel, string Articleid)
         {
-            // TODO Rozwiąż jak bd przychoidził ten kanał i id Artykułu
+           
             MongoCRUD db = new MongoCRUD("SportService_Database");
             var AllChannels = db.LoadRecords<ChanelMongoDatabesPatern>("channels");
-            _body = AllChannels[channel].item.Where(x => x.link == Articleid).Select(s => s.link).ToString();
-            _title = AllChannels[channel].item.Where(x => x.link == Articleid).Select(s => s.title).ToString();
+            _body = AllChannels[channel].item.Where(x => x.guid == Articleid).Select(s => s.link).ToString();
+            _title = AllChannels[channel].item.Where(x => x.guid == Articleid).Select(s => s.title).ToString();
 
 
 

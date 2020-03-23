@@ -244,28 +244,28 @@
     </ApplicationDefinition>
     <Compile Include="Models\ChanelMongoDatabesPatern.cs" />
     <Compile Include="Models\MongoCRUD.cs" />
-    <Compile Include="UserControlAll.xaml.cs">
+    <Compile Include="UserControl\UserControlAll.xaml.cs">
       <DependentUpon>UserControlAll.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControlBasketball.xaml.cs">
+    <Compile Include="UserControl\UserControlBasketball.xaml.cs">
       <DependentUpon>UserControlBasketball.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControlHandball.xaml.cs">
+    <Compile Include="UserControl\UserControlHandball.xaml.cs">
       <DependentUpon>UserControlHandball.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControlMMA.xaml.cs">
+    <Compile Include="UserControl\UserControlMMA.xaml.cs">
       <DependentUpon>UserControlMMA.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControlMoto.xaml.cs">
+    <Compile Include="UserControl\UserControlMoto.xaml.cs">
       <DependentUpon>UserControlMoto.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControlSoccer.xaml.cs">
+    <Compile Include="UserControl\UserControlSoccer.xaml.cs">
       <DependentUpon>UserControlSoccer.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControlTenis.xaml.cs">
+    <Compile Include="UserControl\UserControlTenis.xaml.cs">
       <DependentUpon>UserControlTenis.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControlVolleyball.xaml.cs">
+    <Compile Include="UserControl\UserControlVolleyball.xaml.cs">
       <DependentUpon>UserControlVolleyball.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\ArticleViewModel.cs" />
@@ -282,35 +282,35 @@
     </Compile>
     <Compile Include="ViewModels\Utils\RelayCommand.cs" />
     <Compile Include="ViewModels\Utils\ViewModelBase.cs" />
-    <Page Include="UserControlAll.xaml">
+    <Page Include="UserControl\UserControlAll.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControlBasketball.xaml">
+    <Page Include="UserControl\UserControlBasketball.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControlHandball.xaml">
+    <Page Include="UserControl\UserControlHandball.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControlMMA.xaml">
+    <Page Include="UserControl\UserControlMMA.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControlMoto.xaml">
+    <Page Include="UserControl\UserControlMoto.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControlSoccer.xaml">
+    <Page Include="UserControl\UserControlSoccer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControlTenis.xaml">
+    <Page Include="UserControl\UserControlTenis.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControlVolleyball.xaml">
+    <Page Include="UserControl\UserControlVolleyball.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
