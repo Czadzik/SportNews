@@ -150,9 +150,13 @@
                 </materialDesign:TransitioningContent>-->
             </StackPanel>
         </Grid>
-        <Grid Margin="100 100" Panel.ZIndex="-1">
+        
+        <Grid Margin="0,80,65,0" Panel.ZIndex="-1">
+            
             <ContentControl
             Content="{Binding CurrentPage, UpdateSourceTrigger=PropertyChanged}" />
+            
         </Grid>
+        
     </Grid>
 </Window>

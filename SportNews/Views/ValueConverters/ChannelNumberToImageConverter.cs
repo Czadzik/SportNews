@@ -26,23 +26,23 @@ namespace SportNews.Views.ValueConverters
                     break;
 
                 case 0: // Piłka nożna
-                    filePath = "pack://application:,,,/Resources/Images/background_soccer.jpg";
+                    filePath = "pack://application:,,,/Resources/Images/soccer_img_crop.jpg";
                     break;
 
                 case 1: // Siatkówka
-                    filePath = "pack://application:,,,/Resources/Images/volleyball.jpg";
+                    filePath = "pack://application:,,,/Resources/Images/volleyball_crop.jpg";
                     break;
 
                 case 2: // Sporty Walki
-                    filePath = "pack://application:,,,/Resources/Images/mma.jpg";
+                    filePath = "pack://application:,,,/Resources/Images/mma_crop.jpg";
                     break;
 
                 case 3: // Piłka reczna
-                    filePath = "pack://application:,,,/Resources/Images/handball.jpg";
+                    filePath = "pack://application:,,,/Resources/Images/handball_crop.jpg";
                     break;
 
                 case 4: // Moto
-                    filePath = "pack://application:,,,/Resources/Images/moto.jpg";
+                    filePath = "pack://application:,,,/Resources/Images/moto_crop.jpg";
                     break;
 
                 case 5: // Tenis
