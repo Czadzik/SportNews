@@ -25,5 +25,17 @@ namespace SportNews.Views
             InitializeComponent();
             DataContext = new ArticleViewModel(articleId);
         }
+
+        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+                DragMove();
+        }
+
+        private void ButtonCloseArticle_Click(object sender, RoutedEventArgs e)
+        {
+           
+            this.Close();
+        }
     }
 }

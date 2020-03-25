@@ -6,10 +6,9 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:SportNews.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Title="Article"
-    Width="800"
-    Height="450"
-    mc:Ignorable="d">
+    mc:Ignorable="d"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    Title="Article" Height="720" Width="1300" WindowStartupLocation="CenterScreen" ResizeMode="CanResize" WindowStyle="None">
     <behaviors:Interaction.Triggers>
         <behaviors:EventTrigger EventName="Loaded">
             <behaviors:InvokeCommandAction Command="{Binding Loaded}" />
@@ -17,13 +16,41 @@
     </behaviors:Interaction.Triggers>
 
 
-    <Grid>
-        <StackPanel>
+    <Grid Background="White">
+        <!--<StackPanel>
         <TextBlock Text="{Binding Title}" />
         
         <TextBlock Text="{Binding Body}" />
 
-        </StackPanel>
+        </StackPanel>-->
+        <Grid Height="80" VerticalAlignment="Top" Background="#FF1644A4" MouseDown="Grid_MouseDown">
+            <TextBlock Text="Artykuł" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36"/>
+            <StackPanel VerticalAlignment="Center" Orientation="Horizontal" HorizontalAlignment="Left">
+                <Button x:Name="ButtonCloseArticle" Background="#FF1644A4" Click="ButtonCloseArticle_Click" BorderThickness="0" BorderBrush="#FF1644A4" materialDesign:ShadowAssist.Darken="False" >
+                    <materialDesign:PackIcon Kind="Close" Foreground="#fff" Width="25" Height="25" />
+                </Button>
+            </StackPanel>
+        </Grid>
+  
+            
+        <Grid Margin="0,85,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="140*" />
+                <RowDefinition Height="489*" />
+            </Grid.RowDefinitions>
+            <materialDesign:TransitioningContent Grid.Row="0" x:Name="TransitioningContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}">
+                <TextBlock Grid.Row="0" Text="{Binding Title}" Padding="15" TextWrapping="Wrap" FontFamily="Yu Gothic UI Semibold" FontSize="36" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </materialDesign:TransitioningContent>
 
+            <ScrollViewer  Grid.Row="1" Background="Black">
+                <StackPanel Margin="70,0,240,0">
+                    <StackPanel Margin="5 0" Background="#FF1D1A1A">
+                <TextBlock Text="{Binding Body}" Padding="15" Foreground="White" FontStyle="Italic" FontSize="18" HorizontalAlignment="Stretch"  TextWrapping="Wrap" FontFamily="Yu Gothic Light"/>
+                </StackPanel>
+                </StackPanel>
+            </ScrollViewer>
+            <Image Source="/SportNews;component/ViewModels/LogoPolsatSport.png" Margin="1096,421,34.6,9.8" Grid.Row="1"/>
+
+        </Grid>
     </Grid>
 </Window>
